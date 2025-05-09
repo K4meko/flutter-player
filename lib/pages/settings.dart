@@ -135,21 +135,13 @@ class _SettingsPageState extends State<SettingsPage> {
             ),
           ),
 
-          // Playback Section
-          _buildSectionHeader("Playback"),
-          ListTile(
-            title: const Text("Audio Quality"),
-            subtitle: Text(_audioQuality),
-            trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-            onTap: () {
-              _showAudioQualityDialog();
-            },
-          ),
           SwitchListTile(
             title: const Text("Gapless Playback"),
             subtitle: const Text("Play songs without gaps"),
             value: true,
-            onChanged: (value) {},
+            onChanged: (value) {
+              //dopsat
+            },
           ),
           const Divider(),
 
@@ -159,7 +151,9 @@ class _SettingsPageState extends State<SettingsPage> {
             title: const Text("Music Folder"),
             subtitle: Text(_musicFolder),
             trailing: const Icon(Icons.folder_open),
-            onTap: () {},
+            onTap: () {
+              //dopsat
+            },
           ),
           SwitchListTile(
             title: const Text("Download Album Artwork"),
@@ -178,6 +172,7 @@ class _SettingsPageState extends State<SettingsPage> {
             trailing: const Icon(Icons.refresh),
             onTap: () {
               ScaffoldMessenger.of(context).showSnackBar(
+                //dopsat
                 const SnackBar(content: Text("Scanning for music...")),
               );
               // Implement library scanning
@@ -231,26 +226,6 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 
-  void _showAudioQualityDialog() {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: const Text("Audio Quality"),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              _buildQualityOption("Low (96 kbps)"),
-              _buildQualityOption("Medium (192 kbps)"),
-              _buildQualityOption("High (320 kbps)"),
-              _buildQualityOption("Lossless"),
-            ],
-          ),
-        );
-      },
-    );
-  }
-
   Widget _buildQualityOption(String quality) {
     return ListTile(
       title: Text(quality),
@@ -283,6 +258,7 @@ class _SettingsPageState extends State<SettingsPage> {
           actions: [
             TextButton(
               onPressed: () {
+                // dopsat
                 Navigator.pop(context);
               },
               child: const Text("CANCEL"),
